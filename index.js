@@ -1,5 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+
+  const seenNumbers = {}
+  
+  for(let i = 0; i < array.length; i++){
+
+    const complement = target - array[i]
+
+    if(seenNumbers[complement]) return true
+
+    seenNumbers[array[i]] = true
+}
+
+return false 
 }
 
 /* 
@@ -7,11 +19,16 @@ function hasTargetSum(array, target) {
 */
 
 /* 
-  Add your pseudocode here
+  function of target sum.
+  if integer 1 + integer 2 = ? return true
+  else, return false
+  TEST CASE: ([3, 8, 12, 10, 5],15)
 */
 
 /*
-  Add written explanation of your solution here
+ Have a series of numbers in an array.Also, have a target number.
+  Iterate through the array
+ and find two numbers that add to the target number.
 */
 
 // You can run `node index.js` to view these console logs
